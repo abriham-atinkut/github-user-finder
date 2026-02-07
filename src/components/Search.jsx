@@ -38,7 +38,7 @@ const Search = () => {
       <h1 className="font-bold mb-2 text-4xl">GitHub User Search</h1>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sticky top-0 p-2  mp-2 md:py-4 bg-gray-400"
+        className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sticky top-0 p-2  mp-2 md:py-4  bg-gray-500/70"
       >
         <input
           type="text"
@@ -81,16 +81,16 @@ const Search = () => {
           Looks like we can't find the user.
         </p>
       ) : user ? (
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-4  pt-6 px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4  pt-6 px-10">
           {user.map((user) => (
             <div
               key={user.id}
-              className="border-2 rounded-lg shadow bg-gray-200 hover:bg-gray-300  "
+              className="border-2 rounded-lg hover:shadow-md bg-gray-200 hover:bg-gray-300  "
             >
               <img
                 src={user.avatar_url}
                 alt="profile image"
-                className="w-12 h-12 rounded-full mx-auto my-2 sm:w-24 sm:h-24 lg:w-34 lg:h-34"
+                className="w-12 h-12 rounded-full mx-auto my-2 sm:w-24 sm:h-24 lg:w-34 lg:h-34 "
               />
               <h2 className="">
                 Name:<span className="font-medium"> {user.login}</span>
@@ -100,7 +100,7 @@ const Search = () => {
               <a
                 href={user.html_url}
                 target="_blank"
-                className="inline-block py-1 text-blue-600 hover:text-blue-700 hover:font-medium"
+                className="inline-block py-1 text-blue-600 hover:text-blue-700 hover:scale-110 transition-transform easy-in-out duration-300"
               >
                 View Profile
               </a>
