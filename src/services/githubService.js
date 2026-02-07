@@ -4,7 +4,7 @@ const BASE_URL = "https://api.github.com/search/users?q";
 const TOKEN = import.meta.env.VITE_APP_GITHUB_API_KEY;
 const fetchUserData = async (searchTerm, location, minRepos) => {
   let query = searchTerm ? `${searchTerm}` : "";
-  if (location) query += `location:${location}`;
+  if (location) query += ` location:${location}`;
   if (minRepos) query += ` repos:>=${minRepos}`;
 
   try {

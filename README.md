@@ -8,6 +8,7 @@ This project is built to showcase my learning process and hands-on experience wi
 ## Tech Stack
 - Vite + React
 - Axios
+- Tailwindcss
 - React Router DOM
 - Zustand (state management)
 - GitHub REST API

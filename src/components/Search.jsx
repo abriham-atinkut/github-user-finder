@@ -12,6 +12,7 @@ const Search = () => {
     try {
       const data = await fetchUserData(search, location, minRepos);
       setUser(data);
+      console.log(data);
     } catch (err) {
       setError(err);
     }
@@ -33,11 +34,11 @@ const Search = () => {
   };
 
   return (
-    <div className="text-center pt-6 px-10">
+    <div className="text-center">
       <h1 className="font-bold mb-2 text-4xl">GitHub User Search</h1>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-4"
+        className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sticky top-0 p-2  mp-2 md:py-4 bg-gray-400"
       >
         <input
           type="text"
@@ -80,12 +81,17 @@ const Search = () => {
           Looks like we can't find the user.
         </p>
       ) : user ? (
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-4  pt-6 px-10">
           {user.map((user) => (
             <div
               key={user.id}
-              className="border-2 rounded-lg shadow bg-gray-200 hover:bg-gray-300"
+              className="border-2 rounded-lg shadow bg-gray-200 hover:bg-gray-300  "
             >
+              <img
+                src={user.avatar_url}
+                alt="profile image"
+                className="w-12 h-12 rounded-full mx-auto my-2 sm:w-24 sm:h-24 lg:w-34 lg:h-34"
+              />
               <h2 className="">
                 Name:<span className="font-medium"> {user.login}</span>
               </h2>
